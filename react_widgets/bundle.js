@@ -48,29 +48,62 @@ var Clock = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Clock);
 
     _this = _super.call(this, props);
-    var currentTime = new Date();
+    var currentTime = new Date(); // console.log(currentTime);
+    // console.log(this);
+
     _this.state = {
-      time: currentTime,
-      hours: currentTime.getHours(),
-      minutes: currentTime.getMinutes(),
-      seconds: currentTime.getSeconds()
+      time: 10 // hours: currentTime.getHours(),
+      // minutes: currentTime.getMinutes(),
+      // seconds: currentTime.getSeconds()
+
     };
+    debugger;
     return _this;
   }
 
   _createClass(Clock, [{
+    key: "incrementSeconds",
+    value: function incrementSeconds() {
+      debugger;
+      this.setState({
+        seconds: this.state.seconds + 1
+      });
+
+      if (this.state.seconds === 60) {
+        this.setState({
+          seconds: 0,
+          minutes: this.incrementMinutes
+        });
+      }
+    }
+  }, {
+    key: "incrementMinutes",
+    value: function incrementMinutes() {
+      this.setState({
+        minutes: this.state.minutes + 1
+      });
+
+      if (this.state.minutes === 60) {
+        this.setState({
+          minutes: 0,
+          hours: this.state.hours + 1
+        });
+      }
+    }
+  }, {
     key: "tick",
-    value: function tick() {// setInterval() {
-      //     this.setSeconds()
-      // }
-      // this.setState({
-      //     this.state.time
-      // })
+    value: function tick() {
+      debugger;
+      this.setState({
+        seconds: this.incrementSeconds
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      return console.log(this.state), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "This is our clock page");
+      return console.log(this.state), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+        onClick: this.tick
+      }, "This is our clock page");
     }
   }]);
 
