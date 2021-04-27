@@ -1,0 +1,37 @@
+.widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 5px dotted gray;
+}
+
+.title {
+    color: pink;
+    font-family: 'Amatic SC', cursive;
+    font-style: bold;
+    display: flex;
+    justify-content: center;
+    background: black;
+    padding: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    /* border: 3px solid pink; */
+
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    font-size: 40px;
+    background: pink;
+    padding: 20px;
+    margin-top: 0px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 10px;
+    /* border: 3px solid black; */
+}

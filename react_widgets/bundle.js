@@ -62,7 +62,12 @@ var Clock = /*#__PURE__*/function (_React$Component) {
   _createClass(Clock, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      setInterval(this.tick, 1000);
+      var inter = setInterval(this.tick, 1000);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      clearInterval(inter);
     }
   }, {
     key: "tick",
@@ -107,7 +112,13 @@ var Clock = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return console.log([this.state.hours, this.state.minutes, this.state.seconds].join(":")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "This is our clock page");
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "widget"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+        className: "title"
+      }, "*This is Our Clock*"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+        className: "time"
+      }, [this.state.hours, this.state.minutes, this.state.seconds].join(":")));
     }
   }]);
 

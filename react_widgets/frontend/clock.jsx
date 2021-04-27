@@ -15,7 +15,11 @@ class Clock extends React.Component {
     }
     
     componentDidMount() {
-        setInterval(this.tick, 1000)
+        const inter = setInterval(this.tick, 1000)
+    }
+
+    componentWillUnmount () {
+        clearInterval(inter)
     }
     
     tick() {
@@ -43,8 +47,10 @@ class Clock extends React.Component {
     
     render () {
         return (
-            console.log([this.state.hours, this.state.minutes, this.state.seconds].join(":")),
-            <h1>This is our clock page</h1>
+            <div className="widget">
+                <h1 className="title">*This is Our Clock*</h1>
+                <h2 className="time">{[this.state.hours, this.state.minutes, this.state.seconds].join(":")}</h2>
+            </div>
         )
         
     }
