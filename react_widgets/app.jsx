@@ -7,4 +7,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const hello = React.createElement('h1', null, ["hello"])
 
   ReactDOM.render(hello, root);
+  console.log('hi')
 });
