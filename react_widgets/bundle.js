@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./frontend/clock.jsx":
@@ -7,14 +8,11 @@
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var node_console__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! node:console */ "node:console");
-/* harmony import */ var node_console__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(node_console__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -39,7 +37,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var Clock = /*#__PURE__*/function (_React$Component) {
   _inherits(Clock, _React$Component);
 
@@ -51,21 +48,34 @@ var Clock = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Clock);
 
     _this = _super.call(this, props);
+    var currentTime = new Date();
     _this.state = {
-      time: new Date()
+      time: currentTime,
+      hours: currentTime.getHours(),
+      minutes: currentTime.getMinutes(),
+      seconds: currentTime.getSeconds()
     };
     return _this;
   }
 
   _createClass(Clock, [{
+    key: "tick",
+    value: function tick() {// setInterval() {
+      //     this.setSeconds()
+      // }
+      // this.setState({
+      //     this.state.time
+      // })
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", null, "This is our clock page");
+      return console.log(this.state), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "This is our clock page");
     }
   }]);
 
   return Clock;
-}(react__WEBPACK_IMPORTED_MODULE_1__.Component);
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Clock);
 
@@ -77,7 +87,6 @@ var Clock = /*#__PURE__*/function (_React$Component) {
   \*********************************************/
 /***/ ((module) => {
 
-"use strict";
 /*
 object-assign
 (c) Sindre Sorhus
@@ -178,7 +187,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
   \*************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-"use strict";
 /** @license React v17.0.2
  * react-dom.development.js
  *
@@ -26446,7 +26454,6 @@ exports.version = ReactVersion;
   \*****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 function checkDCE() {
@@ -26490,7 +26497,6 @@ if (false) {} else {
   \*****************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-"use strict";
 /** @license React v17.0.2
  * react.development.js
  *
@@ -28834,7 +28840,6 @@ exports.version = ReactVersion;
   \*************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 if (false) {} else {
@@ -28850,7 +28855,6 @@ if (false) {} else {
   \*********************************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
-"use strict";
 /** @license React v0.20.2
  * scheduler-tracing.development.js
  *
@@ -29208,7 +29212,6 @@ exports.unstable_wrap = unstable_wrap;
   \*************************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
-"use strict";
 /** @license React v0.20.2
  * scheduler.development.js
  *
@@ -29865,7 +29868,6 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
   \*****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 if (false) {} else {
@@ -29881,23 +29883,12 @@ if (false) {} else {
   \*******************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "./node_modules/scheduler/cjs/scheduler-tracing.development.js");
 }
 
-
-/***/ }),
-
-/***/ "node:console":
-/*!********************!*\
-  !*** node:console ***!
-  \********************/
-/***/ (() => {
-
-throw new Error("Module build failed: UnhandledSchemeError: Reading from \"node:console\" is not handled by plugins (Unhandled scheme).\nWebpack supports \"data:\" and \"file:\" URIs by default.\nYou may need an additional plugin to handle \"node:\" URIs.\n    at /Users/samanthalilly/Desktop/a:A_classwork/W10D2/react_widgets/node_modules/webpack/lib/NormalModule.js:742:26\n    at Hook.eval [as callAsync] (eval at create (/Users/samanthalilly/Desktop/a:A_classwork/W10D2/react_widgets/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/samanthalilly/Desktop/a:A_classwork/W10D2/react_widgets/node_modules/tapable/lib/Hook.js:18:14)\n    at Object.processResource (/Users/samanthalilly/Desktop/a:A_classwork/W10D2/react_widgets/node_modules/webpack/lib/NormalModule.js:739:9)\n    at processResource (/Users/samanthalilly/Desktop/a:A_classwork/W10D2/react_widgets/node_modules/loader-runner/lib/LoaderRunner.js:220:11)\n    at iteratePitchingLoaders (/Users/samanthalilly/Desktop/a:A_classwork/W10D2/react_widgets/node_modules/loader-runner/lib/LoaderRunner.js:171:10)\n    at runLoaders (/Users/samanthalilly/Desktop/a:A_classwork/W10D2/react_widgets/node_modules/loader-runner/lib/LoaderRunner.js:397:2)\n    at NormalModule.doBuild (/Users/samanthalilly/Desktop/a:A_classwork/W10D2/react_widgets/node_modules/webpack/lib/NormalModule.js:729:3)\n    at NormalModule.build (/Users/samanthalilly/Desktop/a:A_classwork/W10D2/react_widgets/node_modules/webpack/lib/NormalModule.js:878:15)\n    at /Users/samanthalilly/Desktop/a:A_classwork/W10D2/react_widgets/node_modules/webpack/lib/Compilation.js:1311:12");
 
 /***/ })
 
@@ -29928,18 +29919,6 @@ throw new Error("Module build failed: UnhandledSchemeError: Reading from \"node:
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -29970,9 +29949,8 @@ throw new Error("Module build failed: UnhandledSchemeError: Reading from \"node:
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 /*!******************************!*\
   !*** ./frontend/widgets.jsx ***!
   \******************************/
